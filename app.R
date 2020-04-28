@@ -36,7 +36,7 @@ ui <- fluidPage(
             actionButton('reset','Reset')
         ),
         mainPanel(
-            numericInput('seconds','Seconds:',value=10,min=0,max=99999,step=1),
+            numericInput('seconds','Seconds:',value=5,min=0,max=99999,step=1),
             textOutput('timeleft'),
             tags$head(tags$style("#timeleft{color: green;
                                  font-size: 50px;
@@ -51,7 +51,7 @@ ui <- fluidPage(
 server <- function(input, output, session) {
     
     # Initialize the timer, 10 seconds, not active.
-    timer <- reactiveVal(10)
+    timer <- reactiveVal(5)
     active <- reactiveVal(FALSE)
     sound_to_play <- reactiveVal(8)
     
